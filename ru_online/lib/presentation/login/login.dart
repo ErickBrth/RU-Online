@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:from_css_color/from_css_color.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:ru_online/presentation/login/components/login_form_field.dart';
 
@@ -30,8 +32,10 @@ class _LoginState extends State<Login> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset('assets/images/rulogo.png'),
-                    const SizedBox(height: 26),
+                    Image.asset(
+                      'assets/images/rulogo.png',
+                      height: 180,
+                    ),
                     Row(
                       children: [
                         Text(
@@ -52,7 +56,9 @@ class _LoginState extends State<Login> {
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          context.push('/home');
+                        },
                         style: ElevatedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(vertical: 15),
                           shape: RoundedRectangleBorder(

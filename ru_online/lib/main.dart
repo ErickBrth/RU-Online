@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:from_css_color/from_css_color.dart';
-import 'package:ru_online/presentation/login/login.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ru_online/routes/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,9 +13,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Ru Online',
       debugShowCheckedModeBanner: false,
+
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: fromCssColor("#FFC600")),
         textTheme: GoogleFonts.outfitTextTheme(
@@ -42,7 +43,11 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const Login(),
+      
+      routerDelegate: routes.routerDelegate,
+        routeInformationParser: routes.routeInformationParser,
+        routeInformationProvider: routes.routeInformationProvider,
+      
     );
   }
 }

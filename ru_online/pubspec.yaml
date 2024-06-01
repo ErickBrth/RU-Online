@@ -51,6 +51,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^3.0.0
+  flutter_svg_opt: ^0.0.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -67,6 +68,8 @@ flutter:
   assets:
     - assets/images/background.png
     - assets/images/rulogo.png
+    - assets/images/appbarbackground.svg
+    - assets/images/Pattern.png
     - assets/images/applelogo.svg
     - assets/images/googlelogo.svg
     - assets/images/facebooklogo.svg
