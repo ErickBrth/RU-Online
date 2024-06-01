@@ -70,6 +70,7 @@ flutter:
     - assets/images/rulogo.png
     - assets/images/appbarbackground.svg
     - assets/images/Pattern.png
+    - assets/images/avatar.png
     - assets/images/applelogo.svg
     - assets/images/googlelogo.svg
     - assets/images/facebooklogo.svg
