@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:from_css_color/from_css_color.dart';
+import 'package:ru_online/presentation/login/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,10 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Ru Online',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: fromCssColor("#FFC600")),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const Login(),
     );
   }
 }
