@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:from_css_color/from_css_color.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ru_online/presentation/home/components/app_bar.dart';
 
 class Home extends StatefulWidget {
@@ -13,8 +14,8 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-          preferredSize: Size.fromHeight(100), child: const App_Bar()),
+      appBar: const PreferredSize(
+          preferredSize: Size.fromHeight(100), child: App_Bar()),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(
@@ -22,60 +23,93 @@ class _HomeState extends State<Home> {
           children: [
             Row(
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Bom dia!',
-                      style: Theme.of(context).textTheme.displaySmall,
-                    ),
-                    RichText(
-                        text: TextSpan(
-                          text: 'At this time, The smallest queue is ',
-                          style: Theme.of(context).textTheme.bodyMedium,
-                          children: <TextSpan>[
-                            TextSpan(
-                              text: 'QUEUE 01 ',
-                              style: Theme.of(context).textTheme.bodyLarge,
-                            ),
-                            TextSpan(
-                              text: '(near the lake)',
-                              style: TextStyle(
-                                color: fromCssColor("#EA6721"),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        'Good Morning!',
+                        style: Theme.of(context).textTheme.displaySmall,
+                      ),
+                      FittedBox(
+                        child: RichText(
+                          text: TextSpan(
+                            text: 'At this time, The smallest queue is ',
+                            style: Theme.of(context).textTheme.bodyMedium,
+                            children: <TextSpan>[
+                              TextSpan(
+                                text: 'QUEUE 01 ',
+                                style: Theme.of(context).textTheme.bodyLarge,
                               ),
-                            ),
-                          ],
-                        )
-                    )
-                  ],
+                              TextSpan(
+                                text: '(near the lake)',
+                                style: TextStyle(
+                                  color: fromCssColor("#EA6721"),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ],
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Text(
               'The time of waiting is:',
               style: Theme.of(context).textTheme.bodyMedium,
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Center(
-              child: Text(
-                '00:45:07',
-                style: TextStyle(
-                  fontSize: 48,
-                  fontWeight: FontWeight.bold,
+              child: RichText(
+                text:  TextSpan(
+                  style: GoogleFonts.outfit(
+                    fontSize: 48,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black,
+                  ),
+                  children: const [
+                    TextSpan(text: '00:45'),
+                    TextSpan(
+                      text: ':07',
+                      style: TextStyle(fontSize: 24),
+                    ),
+                  ],
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(Colors.white),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    elevation: 5,
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                   ),
                   onPressed: () {},
-                  child: Text('See Queue ->'),
+                  child: const Row(
+                    children: [
+                      Text(
+                        'See queues',
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
+
+                      Icon(
+                        Icons.arrow_forward,
+                        color: Colors.black,
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
