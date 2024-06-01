@@ -18,11 +18,26 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: fromCssColor("#FFC600")),
-        textTheme: TextTheme(
-          displayLarge: GoogleFonts.outfit(
-            fontSize: 24,
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
+        textTheme: GoogleFonts.outfitTextTheme(
+          Theme.of(context).textTheme.copyWith(
+            displayLarge: GoogleFonts.outfit(
+              fontSize: 24,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+            bodySmall: GoogleFonts.outfit(
+              color: Colors.white,
+              fontSize: 12,
+            ),
+          ),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: fromCssColor("#FFC600"),
+            foregroundColor: Colors.black,
+            textStyle: GoogleFonts.outfit(
+              fontSize: 18
+            )
           ),
         ),
         useMaterial3: true,
