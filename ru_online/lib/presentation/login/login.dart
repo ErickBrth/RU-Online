@@ -15,168 +15,174 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: ConstrainedBox(
-          constraints: BoxConstraints(
-            maxHeight: MediaQuery.of(context).size.height,
+      resizeToAvoidBottomInset: false,
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: Image.asset(
+              'assets/images/background.png',
+              fit: BoxFit.cover,
+            ),
           ),
-          child: Stack(
-            children: [
-              Positioned.fill(
-                child: Image.asset(
-                  'assets/images/background.png',
-                  fit: BoxFit.cover,
-                ),
-              ),
-              Center(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 35.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/images/rulogo.png',
-                        height: 180,
-                      ),
-                      Row(
+          LayoutBuilder(
+            builder: (context, constraints) {
+              return SingleChildScrollView(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    minHeight: constraints.maxHeight,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 35.0),
+                    child: IntrinsicHeight(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
-                            "Log in",
-                            style: Theme.of(context).textTheme.displayLarge,
-                          )
-                        ],
-                      ),
-                      const SizedBox(height: 8),
-                      const LoginFormField(),
-                      const SizedBox(height: 10),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Text('Forgot the Password?',
-                            style: Theme.of(context).textTheme.bodySmall),
-                      ),
-                      const SizedBox(height: 26),
-                      SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            context.replace('/home');
-                          },
-                          style: ElevatedButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(vertical: 15),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
+                          Image.asset(
+                            'assets/images/rulogo.png',
+                            height: 180,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                "Log in",
+                                style: Theme.of(context).textTheme.displayLarge,
+                              )
+                            ],
+                          ),
+                          const SizedBox(height: 8),
+                          const LoginFormField(),
+                          const SizedBox(height: 10),
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: Text(
+                              'Forgot the Password?',
+                              style: Theme.of(context).textTheme.bodySmall,
                             ),
                           ),
-                          child: const Text(
-                            'Enter',
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 26),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 25),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: Divider(
-                                color: Colors.white,
-                                thickness: 1,
+                          const SizedBox(height: 26),
+                          SizedBox(
+                            width: double.infinity,
+                            child: ElevatedButton(
+                              onPressed: () {
+                                context.replace('/home');
+                              },
+                              style: ElevatedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(vertical: 15),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                              child: const Text(
+                                'Enter',
                               ),
                             ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 10.0),
-                              child: Text(
-                                'Or enter with',
+                          ),
+                          const SizedBox(height: 26),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 25),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: Divider(
+                                    color: Colors.white,
+                                    thickness: 1,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 10.0),
+                                  child: Text(
+                                    'Or enter with',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Divider(
+                                    color: Colors.white,
+                                    thickness: 1,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(height: 26),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                padding: const EdgeInsetsDirectional.symmetric(
+                                    horizontal: 10),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: IconButton(
+                                  icon: SvgPicture.asset(
+                                      'assets/images/googlelogo.svg'),
+                                  iconSize: 40,
+                                  onPressed: () {},
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              Container(
+                                padding: const EdgeInsetsDirectional.symmetric(
+                                    horizontal: 10),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: IconButton(
+                                  icon: SvgPicture.asset(
+                                      'assets/images/facebooklogo.svg'),
+                                  iconSize: 40,
+                                  onPressed: () {},
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 15,
+                              ),
+                              Container(
+                                padding: const EdgeInsetsDirectional.symmetric(
+                                    horizontal: 10),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: IconButton(
+                                  icon: SvgPicture.asset(
+                                      'assets/images/applelogo.svg'),
+                                  iconSize: 40,
+                                  onPressed: () {},
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 20),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Text(
+                                "Don't have an account? ",
                                 style: TextStyle(color: Colors.white),
                               ),
-                            ),
-                            Expanded(
-                              child: Divider(
-                                color: Colors.white,
-                                thickness: 1,
+                              GestureDetector(
+                                child: const Text(
+                                  'sign up',
+                                  style: TextStyle(color: Color(0xFFFAA911)),
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 26),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            padding: const EdgeInsetsDirectional.symmetric(
-                                horizontal: 10),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: IconButton(
-                              icon: SvgPicture.asset(
-                                  'assets/images/googlelogo.svg'),
-                              iconSize: 40,
-                              onPressed: () {},
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          Container(
-                            padding: const EdgeInsetsDirectional.symmetric(
-                                horizontal: 10),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: IconButton(
-                              icon: SvgPicture.asset(
-                                  'assets/images/facebooklogo.svg'),
-                              iconSize: 40,
-                              onPressed: () {},
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          Container(
-                            padding: const EdgeInsetsDirectional.symmetric(
-                                horizontal: 10),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: IconButton(
-                              icon: SvgPicture.asset(
-                                  'assets/images/applelogo.svg'),
-                              iconSize: 40,
-                              onPressed: () {},
-                            ),
+                            ],
                           ),
                         ],
                       ),
-                      const SizedBox(height: 20),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            "Don't have an account? ",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          GestureDetector(
-                            child: const Text(
-                              'sign up',
-                              style: TextStyle(color: Color(0xFFFAA911)),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 40), // Espaço final fixo
-                    ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              );
+            },
           ),
-        ),
+        ],
       ),
     );
   }

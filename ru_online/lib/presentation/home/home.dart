@@ -31,15 +31,15 @@ class _HomeState extends State<Home> {
                     ),
                     RichText(
                         text: TextSpan(
-                          text: 'No momento, a menor fila é a ',
+                          text: 'At this time, The smallest queue is ',
                           style: Theme.of(context).textTheme.bodyMedium,
                           children: <TextSpan>[
                             TextSpan(
-                              text: 'FILA 01 ',
+                              text: 'QUEUE 01 ',
                               style: Theme.of(context).textTheme.bodyLarge,
                             ),
                             TextSpan(
-                              text: '(perto do laguinho)',
+                              text: '(near the lake)',
                               style: TextStyle(
                                 color: fromCssColor("#EA6721"),
                               ),
@@ -53,7 +53,7 @@ class _HomeState extends State<Home> {
             ),
             SizedBox(height: 8),
             Text(
-              'O tempo de espera é de:',
+              'The time of waiting is:',
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             SizedBox(height: 10),
@@ -75,7 +75,7 @@ class _HomeState extends State<Home> {
                     backgroundColor: MaterialStatePropertyAll(Colors.white),
                   ),
                   onPressed: () {},
-                  child: Text('Ver filas ->'),
+                  child: Text('See Queue ->'),
                 ),
               ],
             ),
