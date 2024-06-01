@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:from_css_color/from_css_color.dart';
 import 'package:ru_online/presentation/home/components/app_bar.dart';
 
 class Home extends StatefulWidget {
@@ -15,39 +16,45 @@ class _HomeState extends State<Home> {
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(100), child: const App_Bar()),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
-                SizedBox(width: 10),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Bom dia!',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.displaySmall,
                     ),
-                    // Text(
-                    //   'No momento, a menor fila é a FILA 01 (perto do laguinho)',
-                    //   style: TextStyle(
-                    //     fontSize: 16,
-                    //   ),
-                    // ),
+                    RichText(
+                        text: TextSpan(
+                          text: 'No momento, a menor fila é a ',
+                          style: Theme.of(context).textTheme.bodyMedium,
+                          children: <TextSpan>[
+                            TextSpan(
+                              text: 'FILA 01 ',
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            ),
+                            TextSpan(
+                              text: '(perto do laguinho)',
+                              style: TextStyle(
+                                color: fromCssColor("#EA6721"),
+                              ),
+                            ),
+                          ],
+                        )
+                    )
                   ],
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 8),
             Text(
               'O tempo de espera é de:',
-              style: TextStyle(
-                fontSize: 16,
-              ),
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
             SizedBox(height: 10),
             Center(
@@ -60,11 +67,17 @@ class _HomeState extends State<Home> {
               ),
             ),
             SizedBox(height: 20),
-            Center(
-              child: ElevatedButton(
-                onPressed: () {},
-                child: Text('Ver filas ->'),
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll(Colors.white),
+                  ),
+                  onPressed: () {},
+                  child: Text('Ver filas ->'),
+                ),
+              ],
             ),
           ],
         ),
