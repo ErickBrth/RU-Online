@@ -1,7 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:from_css_color/from_css_color.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ru_online/presentation/home/components/app_bar.dart';
+import 'package:ru_online/presentation/home/components/queue_button.dart';
+
+import 'components/MenuGridView/menu_grid_view.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -17,7 +21,7 @@ class _HomeState extends State<Home> {
       appBar: const PreferredSize(
           preferredSize: Size.fromHeight(100), child: App_Bar()),
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(25.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -32,7 +36,9 @@ class _HomeState extends State<Home> {
                         'Good Morning!',
                         style: Theme.of(context).textTheme.displaySmall,
                       ),
+                      const SizedBox(height: 5,),
                       FittedBox(
+                        fit: BoxFit.contain,
                         child: RichText(
                           text: TextSpan(
                             text: 'At this time, The smallest queue is ',
@@ -58,9 +64,12 @@ class _HomeState extends State<Home> {
               ],
             ),
             const SizedBox(height: 8),
-            Text(
-              'The time of waiting is:',
-              style: Theme.of(context).textTheme.bodyMedium,
+            FittedBox(
+              fit: BoxFit.contain,
+              child: Text(
+                'The time of waiting is:',
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
             ),
             const SizedBox(height: 10),
             Center(
@@ -82,37 +91,9 @@ class _HomeState extends State<Home> {
               ),
             ),
             const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    elevation: 5,
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                  ),
-                  onPressed: () {},
-                  child: const Row(
-                    children: [
-                      Text(
-                        'See queues',
-                        style: TextStyle(
-                          color: Colors.black,
-                        ),
-                      ),
-
-                      Icon(
-                        Icons.arrow_forward,
-                        color: Colors.black,
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+            const QueueButton(),
+            Text("Menu", style: Theme.of(context).textTheme.titleLarge,),
+            MenuGridView()
           ],
         ),
       ),

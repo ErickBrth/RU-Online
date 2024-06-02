@@ -37,6 +37,10 @@ class MyApp extends StatelessWidget {
                   fontSize: 20,
                   color: fromCssColor("#EA6721"),
                 ),
+            titleLarge: GoogleFonts.outfit(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
               ),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(

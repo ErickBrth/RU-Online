@@ -39,7 +39,7 @@ dependencies:
   from_css_color: ^2.0.0
   go_router: ^14.1.4
   google_fonts: ^6.2.1
-  flutter_svg: ^1.0.3
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   flutter_test:
