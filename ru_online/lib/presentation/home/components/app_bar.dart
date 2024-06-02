@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:from_css_color/from_css_color.dart';
 
 class App_Bar extends StatefulWidget {
@@ -12,35 +11,42 @@ class App_Bar extends StatefulWidget {
 class _App_BarState extends State<App_Bar> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Image.asset(
-          'assets/images/Pattern.png',
+    return AppBar(
+      forceMaterialTransparency: true,
+      flexibleSpace: Stack(
+        fit: StackFit.expand,
+        children: [
+          Positioned.fill(
+            child: Image.asset(
+              'assets/images/Pattern.png',
+              fit: BoxFit.cover,
+            ),
+          ),
+        ],
+      ),
+      centerTitle: true,
+      title: Image.asset(
+        'assets/images/rulogo.png',
+        height: 120,
+      ),
+      leading: Container(
+        margin: const EdgeInsets.only(left: 8.0, top: 10.0),
+        padding: EdgeInsetsDirectional.only(start: 10),
+        child: Align(
+          alignment: Alignment.centerRight,
+          child: Image.asset(
+            'assets/images/avatar.png',
+          ),
         ),
+      ),
+      leadingWidth: 75,
+      actions: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 40),
-          child: AppBar(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            centerTitle: true,
-            title: Image.asset(
-              'assets/images/rulogo.png',
-              height: 100,
-            ),
-            leading: Container(
-              margin: const EdgeInsets.only(top: 10),
-              child: Image.asset(
-                'assets/images/avatar.png',
-              ),
-            ),
-            leadingWidth: 60,
-            actions: [
-              IconButton(
-                icon: const Icon(Icons.volume_up_rounded),
-                onPressed: () {},
-                color: fromCssColor("#4B4237"),
-              ),
-            ],
+          padding: const EdgeInsets.only(right: 30),
+          child: IconButton(
+            icon: const Icon(Icons.volume_up_rounded),
+            onPressed: () {},
+            color: fromCssColor("#4B4237"),
           ),
         ),
       ],

@@ -46,8 +46,9 @@ class _MenuGridViewState extends State<MenuGridView> {
           crossAxisCount: 3,
           crossAxisSpacing: 16.0,
           mainAxisSpacing: 16.0,
-          childAspectRatio: 0.60,
+          childAspectRatio: 0.50,
         ),
+        physics: const NeverScrollableScrollPhysics(),
         itemCount: menuItems.length,
         itemBuilder: (context, index) {
           return MenuCard(
