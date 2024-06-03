@@ -5,6 +5,7 @@ import 'package:from_css_color/from_css_color.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ru_online/presentation/home/components/app_bar.dart';
 import 'package:ru_online/presentation/home/components/queue_button.dart';
+import 'package:ru_online/presentation/shared/components/yellow_button.dart';
 
 import 'components/MenuGridView/menu_grid_view.dart';
 
@@ -39,9 +40,12 @@ class _HomeState extends State<Home> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Text(
-                              'Good Morning!',
-                              style: Theme.of(context).textTheme.displaySmall,
+                            FittedBox(
+                              fit: BoxFit.contain,
+                              child: Text(
+                                'Good Morning!',
+                                style: Theme.of(context).textTheme.displaySmall,
+                              ),
                             ),
                             const SizedBox(height: 5,),
                             FittedBox(
@@ -80,27 +84,51 @@ class _HomeState extends State<Home> {
                   ),
                   const SizedBox(height: 10),
                   Center(
-                    child: RichText(
-                      text:  TextSpan(
-                        style: GoogleFonts.outfit(
-                          fontSize: 48,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black,
-                        ),
-                        children: const [
-                          TextSpan(text: '00:45'),
-                          TextSpan(
-                            text: ':07',
-                            style: TextStyle(fontSize: 24),
+                    child: FittedBox(
+                      fit: BoxFit.contain,
+                      child: RichText(
+                        text:  TextSpan(
+                          style: GoogleFonts.outfit(
+                            fontSize: 48,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black,
                           ),
-                        ],
+                          children: const [
+                            TextSpan(text: '00:45'),
+                            TextSpan(
+                              text: ':07',
+                              style: TextStyle(fontSize: 24),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 10),
                   const QueueButton(),
+                  const SizedBox(height: 25),
                   Text("Menu", style: Theme.of(context).textTheme.titleLarge,),
-                  MenuGridView()
+                  const MenuGridView(),
+                  const SizedBox(height: 20),
+                  FittedBox(
+                    child: Text(
+                      "You haven't placed your order today!",
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                  ),
+                  const SizedBox(height: 5),
+                  const FittedBox(
+                    child: Text(
+                      "Order in advance and reduce your time in line",
+                    ),
+                  ),
+                  const SizedBox(height: 25),
+                  const Center(
+                    child: SizedBox(
+                      width: 183,
+                        child: YellowButton(defaultRoute: "/home", title: "Order now!", icon: Icon(Icons.arrow_forward_outlined,),)
+                    ),
+                  ),
                 ],
               ),
             ),

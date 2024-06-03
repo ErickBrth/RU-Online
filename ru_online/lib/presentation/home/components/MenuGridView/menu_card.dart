@@ -13,7 +13,7 @@ class MenuCard extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         double cardWidth = constraints.maxWidth;
-        double cardHeight = cardWidth * 1.6;
+        double cardHeight = cardWidth * 1.65;
 
         return Card(
           elevation: 5,
@@ -41,21 +41,25 @@ class MenuCard extends StatelessWidget {
                   ),
                   child: CachedNetworkImage(
                     imageUrl: image,
-                    placeholder: (context, url) => Center(child: CircularProgressIndicator()),
-                    errorWidget: (context, url, error) => Icon(Icons.error),
+                    placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+                    errorWidget: (context, url, error) => const Icon(Icons.error),
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  title,
-                  style: GoogleFonts.lato(
-                    fontSize: 10.0,
-                    fontWeight: FontWeight.w500,
+              Flexible(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    title,
+                    style: GoogleFonts.lato(
+                      fontSize: 10.0,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    textAlign: TextAlign.start,
+
+                    maxLines: 2, // Limite de linhas para garantir a quebra
                   ),
-                  textAlign: TextAlign.start,
                 ),
               ),
             ],

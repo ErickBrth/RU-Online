@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:ru_online/presentation/login/components/login_form_field.dart';
+import 'package:ru_online/presentation/shared/components/yellow_button.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -60,23 +61,7 @@ class _LoginState extends State<Login> {
                             ),
                           ),
                           const SizedBox(height: 26),
-                          SizedBox(
-                            width: double.infinity,
-                            child: ElevatedButton(
-                              onPressed: () {
-                                context.replace('/home');
-                              },
-                              style: ElevatedButton.styleFrom(
-                                padding: const EdgeInsets.symmetric(vertical: 15),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                              ),
-                              child: const Text(
-                                'Enter',
-                              ),
-                            ),
-                          ),
+                          const YellowButton(defaultRoute: "/home", shouldReplace: true, title: "Enter",),
                           const SizedBox(height: 26),
                           const Padding(
                             padding: EdgeInsets.symmetric(horizontal: 25),

@@ -40,15 +40,16 @@ class _MenuGridViewState extends State<MenuGridView> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return Flexible(
       child: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
           crossAxisSpacing: 16.0,
           mainAxisSpacing: 16.0,
-          childAspectRatio: 0.50,
+          childAspectRatio: 0.55,
         ),
         physics: const NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
         itemCount: menuItems.length,
         itemBuilder: (context, index) {
           return MenuCard(
