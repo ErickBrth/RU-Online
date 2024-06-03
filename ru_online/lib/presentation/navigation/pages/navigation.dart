@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:ru_online/presentation/profile/pages/profile_page.dart';
 
 import '../../home/components/app_bar.dart';
 import '../../home/pages/home.dart';
@@ -34,7 +35,7 @@ class _NavigationState extends State<Navigation> {
     return Scaffold(
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(80),
-        child: App_Bar(),
+        child: App_Bar(avatarUrl: 'assets/images/avatar.png',),
       ),
       body: SafeArea(
         child: _pages[_currentIndex],
