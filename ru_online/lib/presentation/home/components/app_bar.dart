@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:from_css_color/from_css_color.dart';
 
 class App_Bar extends StatefulWidget {
-  const App_Bar({super.key});
+  final String? avatarUrl;
+
+  const App_Bar({super.key, this.avatarUrl});
 
   @override
   State<App_Bar> createState() => _App_BarState();
@@ -31,15 +33,36 @@ class _App_BarState extends State<App_Bar> {
       ),
       leading: Container(
         margin: const EdgeInsets.only(left: 8.0, top: 10.0),
-        padding: EdgeInsetsDirectional.only(start: 10),
+        padding: const EdgeInsetsDirectional.only(start: 10),
         child: Align(
           alignment: Alignment.centerRight,
-          child: Image.asset(
-            'assets/images/avatar.png',
+          child: widget.avatarUrl != null
+              ? Image.asset(
+            widget.avatarUrl!,
+          )
+              : GestureDetector(
+            onTap: () {
+              Navigator.of(context).pop();
+            },
+            child: const Row(
+              children: [
+                Icon(Icons.arrow_back, color: Colors.black),
+                SizedBox(width: 5),
+                Flexible(
+                  child: Text(
+                    'Back',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
-      leadingWidth: 75,
+      leadingWidth: 90,
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 30),
