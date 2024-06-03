@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:ru_online/presentation/home/home.dart';
-import 'package:ru_online/presentation/login/login.dart';
+import 'package:ru_online/presentation/login/pages/login.dart';
+import 'package:ru_online/presentation/navigation/pages/navigation.dart';
 
 final routes = GoRouter(routes: [
   GoRoute(
@@ -10,6 +10,6 @@ final routes = GoRouter(routes: [
   ),
   GoRoute(
     path: '/home',
-    builder: (BuildContext context, GoRouterState state) => const Home(),
+    builder: (BuildContext context, GoRouterState state) => const Navigation(),
   ),
 ]);
