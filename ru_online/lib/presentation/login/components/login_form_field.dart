@@ -17,8 +17,8 @@ class _LoginFormFieldState extends State<LoginFormField> {
       child: Column(
         children: [
           TextFormField(
-            style: const TextStyle(color: Colors.white), // Define a cor do texto
-            cursorColor: Colors.white, // Define a cor do cursor
+            style: const TextStyle(color: Colors.white),
+            cursorColor: Colors.white,
             decoration: InputDecoration(
               labelText: 'Email or Phone',
               labelStyle: GoogleFonts.outfit(
@@ -37,8 +37,8 @@ class _LoginFormFieldState extends State<LoginFormField> {
           ),
           const SizedBox(height: 26),
           TextFormField(
-            style: const TextStyle(color: Colors.white), // Define a cor do texto
-            cursorColor: Colors.white, // Define a cor do cursor
+            style: const TextStyle(color: Colors.white),
+            cursorColor: Colors.white,
             obscureText: !_isPasswordVisible,
             decoration: InputDecoration(
               labelText: 'Password',

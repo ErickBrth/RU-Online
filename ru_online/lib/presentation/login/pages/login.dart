@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:ru_online/presentation/login/components/login_form_field.dart';
+import 'package:ru_online/presentation/shared/components/login%20with%20social/login_with_social.dart';
 import 'package:ru_online/presentation/shared/components/yellow_button.dart';
 
 class Login extends StatefulWidget {
@@ -90,71 +91,20 @@ class _LoginState extends State<Login> {
                             ),
                           ),
                           const SizedBox(height: 26),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                padding: const EdgeInsetsDirectional.symmetric(
-                                    horizontal: 10),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                child: IconButton(
-                                  icon: SvgPicture.asset(
-                                      'assets/images/googlelogo.svg'),
-                                  iconSize: 40,
-                                  onPressed: () {},
-                                ),
-                              ),
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              Container(
-                                padding: const EdgeInsetsDirectional.symmetric(
-                                    horizontal: 10),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                child: IconButton(
-                                  icon: SvgPicture.asset(
-                                      'assets/images/facebooklogo.svg'),
-                                  iconSize: 40,
-                                  onPressed: () {},
-                                ),
-                              ),
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              Container(
-                                padding: const EdgeInsetsDirectional.symmetric(
-                                    horizontal: 10),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                child: IconButton(
-                                  icon: SvgPicture.asset(
-                                      'assets/images/applelogo.svg'),
-                                  iconSize: 40,
-                                  onPressed: () {},
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 20),
+                          const LoginWithSocial(),
+                          const SizedBox(height: 30),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               const Text(
                                 "Don't have an account? ",
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(color: Colors.white, fontSize: 14),
                               ),
                               GestureDetector(
+                                onTap: () => context.push("/register"),
                                 child: const Text(
                                   'sign up',
-                                  style: TextStyle(color: Color(0xFFFAA911)),
+                                  style: TextStyle(color: Color(0xFFFAA911), fontSize: 14),
                                 ),
                               ),
                             ],

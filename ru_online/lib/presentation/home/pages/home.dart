@@ -1,11 +1,11 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:from_css_color/from_css_color.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ru_online/presentation/home/components/app_bar.dart';
+
 import 'package:ru_online/presentation/home/components/queue_button.dart';
-import 'package:ru_online/presentation/shared/components/Botton%20Navigation%20Bar/bottom_navigation.dart';
+
 import 'package:ru_online/presentation/shared/components/yellow_button.dart';
 
 import '../components/MenuGridView/menu_grid_view.dart';
@@ -126,6 +126,7 @@ class _HomeState extends State<Home> {
                     child: YellowButton(defaultRoute: "/home", title: "Order now!", icon: Icon(Icons.arrow_forward_outlined,),)
                 ),
               ),
+              const SizedBox(height: 10),
             ],
           ),
         ),
