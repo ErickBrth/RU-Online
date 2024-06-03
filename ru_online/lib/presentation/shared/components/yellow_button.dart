@@ -22,7 +22,7 @@ class YellowButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {
           if (shouldReplace) {
-            context.replace(defaultRoute);
+            context.push(defaultRoute);
           } else {
             context.push(defaultRoute);
           }
