@@ -12,9 +12,9 @@ class _CustomDropdownButtonState extends State<CustomDropdownButton> {
   String? _selectedValue;
 
   final List<String> _options = [
-    'Vegetarian',
-    'Vegan',
-    'Conventional',
+    'Vegetariano',
+    'Vegano',
+    'Convecional',
   ];
 
   @override
@@ -23,7 +23,7 @@ class _CustomDropdownButtonState extends State<CustomDropdownButton> {
       padding: const EdgeInsets.only(top: 26),
       child: DropdownButtonFormField<String>(
         value: _selectedValue,
-        hint: const Text('Type of Diet', style: TextStyle(color: Colors.black)),
+        hint: const Text('Tipo de Dieta', style: TextStyle(color: Colors.black)),
         items: _options.map((String value) {
           return DropdownMenuItem<String>(
             value: value,

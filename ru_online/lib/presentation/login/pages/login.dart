@@ -46,7 +46,7 @@ class _LoginState extends State<Login> {
                           Row(
                             children: [
                               Text(
-                                "Log in",
+                                "Faça seu login",
                                 style: Theme.of(context).textTheme.displayLarge,
                               )
                             ],
@@ -57,12 +57,12 @@ class _LoginState extends State<Login> {
                           Align(
                             alignment: Alignment.centerRight,
                             child: Text(
-                              'Forgot the Password?',
+                              'Esqueceu a senha?',
                               style: Theme.of(context).textTheme.bodySmall,
                             ),
                           ),
                           const SizedBox(height: 26),
-                          const YellowButton(defaultRoute: "/home", shouldReplace: true, title: "Enter",),
+                          const YellowButton(defaultRoute: "/home", shouldReplace: true, title: "Entrar",),
                           const SizedBox(height: 26),
                           const Padding(
                             padding: EdgeInsets.symmetric(horizontal: 25),
@@ -77,7 +77,7 @@ class _LoginState extends State<Login> {
                                 Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 10.0),
                                   child: Text(
-                                    'Or enter with',
+                                    'Ou entre com',
                                     style: TextStyle(color: Colors.white),
                                   ),
                                 ),
@@ -97,13 +97,13 @@ class _LoginState extends State<Login> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               const Text(
-                                "Don't have an account? ",
+                                "Não possui uma conta? ",
                                 style: TextStyle(color: Colors.white, fontSize: 14),
                               ),
                               GestureDetector(
                                 onTap: () => context.push("/register"),
                                 child: const Text(
-                                  'sign up',
+                                  'Inscreva-se',
                                   style: TextStyle(color: Color(0xFFFAA911), fontSize: 14),
                                 ),
                               ),

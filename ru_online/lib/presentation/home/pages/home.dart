@@ -40,7 +40,7 @@ class _HomeState extends State<Home> {
                         FittedBox(
                           fit: BoxFit.contain,
                           child: Text(
-                            'Good Morning!',
+                            'Bom dia!',
                             style: Theme.of(context).textTheme.displaySmall,
                           ),
                         ),
@@ -49,15 +49,15 @@ class _HomeState extends State<Home> {
                           fit: BoxFit.contain,
                           child: RichText(
                             text: TextSpan(
-                              text: 'At this time, The smallest queue is ',
+                              text: 'No momento, a menor fila é a ',
                               style: Theme.of(context).textTheme.bodyMedium,
                               children: <TextSpan>[
                                 TextSpan(
-                                  text: 'QUEUE 01 ',
+                                  text: 'FILA 01 ',
                                   style: Theme.of(context).textTheme.bodyLarge,
                                 ),
                                 TextSpan(
-                                  text: '(near the lake)',
+                                  text: '(perto do laguinho)',
                                   style: TextStyle(
                                     color: fromCssColor("#EA6721"),
                                   ),
@@ -75,7 +75,7 @@ class _HomeState extends State<Home> {
               FittedBox(
                 fit: BoxFit.contain,
                 child: Text(
-                  'The time of waiting is:',
+                  'O tempo de espera é de:',
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
               ),
@@ -104,26 +104,26 @@ class _HomeState extends State<Home> {
               const SizedBox(height: 10),
               const QueueButton(),
               const SizedBox(height: 25),
-              Text("Menu", style: Theme.of(context).textTheme.titleLarge,),
+              Text("O que tem pra hoje?", style: Theme.of(context).textTheme.titleLarge,),
               const MenuGridView(),
               const SizedBox(height: 20),
               FittedBox(
                 child: Text(
-                  "You haven't placed your order today!",
+                  "Você ainda não fez seu pedido hoje!",
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),
               const SizedBox(height: 5),
               const FittedBox(
                 child: Text(
-                  "Order in advance and reduce your time in line",
+                  "Peça com antecedência e diminua seu tempo na fila ",
                 ),
               ),
               const SizedBox(height: 25),
               const Center(
                 child: SizedBox(
                     width: 183,
-                    child: YellowButton(defaultRoute: "/home", title: "Order now!", icon: Icon(Icons.arrow_forward_outlined,),)
+                    child: YellowButton(defaultRoute: "/home", title: "Peça Agora!", icon: Icon(Icons.arrow_forward_outlined,),)
                 ),
               ),
               const SizedBox(height: 10),

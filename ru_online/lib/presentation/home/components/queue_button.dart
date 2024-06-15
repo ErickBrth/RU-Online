@@ -34,7 +34,7 @@ class _QueueButtonState extends State<QueueButton> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  'See queues',
+                  'Ver filas',
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 const Icon(

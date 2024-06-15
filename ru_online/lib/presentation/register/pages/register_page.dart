@@ -5,6 +5,7 @@ import 'package:ru_online/presentation/register/components/drop_down_button.dart
 import 'package:ru_online/presentation/register/components/gender_selection.dart';
 import 'package:ru_online/presentation/register/components/register_form_field.dart';
 import 'package:ru_online/presentation/shared/components/login%20with%20social/login_with_social.dart';
+import 'package:ru_online/presentation/shared/components/yellow_button.dart';
 
 import '../../home/components/app_bar.dart';
 
@@ -31,7 +32,7 @@ class _RegisterPageState extends State<RegisterPage> {
             children: [
               FittedBox(
                 child: Text(
-                  "Create your Account",
+                  "Crie sua conta",
                   style: Theme.of(context).textTheme.displayMedium,
                 ),
               ),
@@ -39,7 +40,7 @@ class _RegisterPageState extends State<RegisterPage> {
               const RegisterFormField(),
               const CustomDropdownButton(),
               const SizedBox(height: 26),
-              const GenderSelection(),
+              const YellowButton(defaultRoute: "/home", title: "Registrar"),
               const SizedBox(height: 26),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 25),
@@ -54,7 +55,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 10.0),
                       child: Text(
-                        'Or register with',
+                        'Ou registre-se com',
                         style: TextStyle(color: Colors.grey),
                       ),
                     ),
@@ -74,13 +75,13 @@ class _RegisterPageState extends State<RegisterPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    "Do you have an account? ",
+                    "Já possui conta? ",
                     style: TextStyle(color: Colors.grey, fontSize: 14),
                   ),
                   GestureDetector(
                     onTap: () => context.pop(),
                     child: const Text(
-                      'Login',
+                      'Faça seu Login',
                       style: TextStyle(color: Colors.black, fontSize: 14, fontWeight: FontWeight.bold),
                     ),
                   ),

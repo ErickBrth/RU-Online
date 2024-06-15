@@ -18,23 +18,23 @@ class BottomNavigation extends StatelessWidget {
       items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.home_outlined),
-          label: 'Home',
+          label: 'Início',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.attach_money_outlined),
-          label: 'Wallet',
+          label: 'Carteira',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.restaurant_menu_outlined),
-          label: 'Menu',
+          label: 'Cardápio',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.rate_review_outlined),
-          label: 'FeedBack',
+          label: 'Avaliar',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.person),
-          label: 'Profile',
+          label: 'Perfil',
         ),
       ],
       selectedItemColor: Colors.black,

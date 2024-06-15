@@ -14,15 +14,15 @@ class _RegisterFormFieldState extends State<RegisterFormField> {
     return const Form(
         child: Column(
           children: [
-            CustomTextFormField(title: "Name",),
-            const SizedBox(height: 26,),
+            CustomTextFormField(title: "Nome",),
+            SizedBox(height: 26,),
             CustomTextFormField(title: "Email",),
-            const SizedBox(height: 26,),
-            CustomTextFormField(title: "Phone",),
-            const SizedBox(height: 26,),
-            CustomTextFormField(title: "Password",),
-            const SizedBox(height: 26,),
-            CustomTextFormField(title: "Confirm Password",),
+            SizedBox(height: 26,),
+            CustomTextFormField(title: "Telefone",),
+            SizedBox(height: 26,),
+            CustomTextFormField(title: "Senha",),
+            SizedBox(height: 26,),
+            CustomTextFormField(title: "Confirme sua Senha",),
           ],
         )
     );
