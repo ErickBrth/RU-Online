@@ -20,7 +20,7 @@ class _LoginFormFieldState extends State<LoginFormField> {
             style: const TextStyle(color: Colors.white),
             cursorColor: Colors.white,
             decoration: InputDecoration(
-              labelText: 'Email or Phone',
+              labelText: 'Email ou telefone',
               labelStyle: GoogleFonts.outfit(
                 fontSize: 16,
                 color: Colors.white,
@@ -41,7 +41,7 @@ class _LoginFormFieldState extends State<LoginFormField> {
             cursorColor: Colors.white,
             obscureText: !_isPasswordVisible,
             decoration: InputDecoration(
-              labelText: 'Password',
+              labelText: 'Senha',
               labelStyle: GoogleFonts.outfit(
                 fontSize: 16,
                 color: Colors.white,
